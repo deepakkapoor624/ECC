@@ -40,8 +40,13 @@ def main():
 
     dout = Signal(intbv(0)[data_width:0])
 
-    dual_port_ram(clk, wr, addr, din, dout, addr_width, data_width)
+    var_to_verilog = dual_port_ram(clk, wr, addr, din, dout, addr_width, data_width)
+    print var_to_verilog
+    var_to_verilog.convert(hdl="Verilog", initial_values=True)
 
+
+if __name__ == '__main__':
+    main()
 
 
 
