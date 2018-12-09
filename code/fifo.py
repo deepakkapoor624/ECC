@@ -18,6 +18,7 @@ def fifo(dout, din, we, re, empty, full, clk):
     @always(clk.posedge)
     def access():
         if we ==1:
+
             fifo_rear.next = fifo_rear + 1
             fifo_buffer[fifo_rear.next].next =  din
             fifo_counter.next = fifo_counter + 1
