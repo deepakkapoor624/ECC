@@ -37,13 +37,13 @@ def mul_2_2(A, B, C):
             C.next = 0b0110
         elif concat(A,B) == 15:
             C.next = 0b0101
+
     return lut_2_2
 
-
 def main():
-    A = Signal(intbv(0)[1:0])
-    B = Signal(intbv(0)[1:0])
-    C = Signal(intbv(0)[3:0])
+    A = Signal(intbv(0)[2:0])
+    B = Signal(intbv(0)[2:0])
+    C = Signal(intbv(0)[4:0])
     var_to_verilog = mul_2_2(A, B, C)
     var_to_verilog.convert(hdl='verilog', initial_values=True)
 
